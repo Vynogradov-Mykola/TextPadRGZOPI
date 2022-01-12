@@ -16,5 +16,25 @@ namespace TextPad
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            try { VisitLink(); }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + " Unable to open link that was clicked.");
+            }
+        }
+        private void VisitLink()
+        {
+            linkLabel1.LinkVisited = true;
+            System.Diagnostics.Process.Start("https://github.com/Vynogradov-Mykola/TextPadRGZOPI");
+
+        }
+
+        private void Okey_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

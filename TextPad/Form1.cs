@@ -157,6 +157,13 @@ namespace TextPad
             form.richTextBox1.Find(frm.FindText, start, frm.FindCondition);
 
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About frm = new About();
+            frm.Show();
+
+        }
     }
 }
 
