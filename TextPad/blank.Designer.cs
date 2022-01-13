@@ -40,6 +40,7 @@
             this.statusBar = new System.Windows.Forms.StatusStrip();
             this.Amount_sb = new System.Windows.Forms.ToolStripStatusLabel();
             this.Time = new System.Windows.Forms.ToolStripStatusLabel();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.Menu.SuspendLayout();
             this.statusBar.SuspendLayout();
             this.SuspendLayout();
@@ -138,8 +139,8 @@
             // 
             this.Time.Margin = new System.Windows.Forms.Padding(100, 3, 0, 2);
             this.Time.Name = "Time";
-            this.Time.Size = new System.Drawing.Size(47, 20);
-            this.Time.Text = "Timer";
+            this.Time.Size = new System.Drawing.Size(63, 20);
+            this.Time.Text = "00:00:00";
             // 
             // blank
             // 
@@ -175,5 +176,6 @@
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel Amount_sb;
         private System.Windows.Forms.ToolStripStatusLabel Time;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

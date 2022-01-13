@@ -18,13 +18,14 @@ namespace TextPad
             saveToolStripMenuItem.Enabled = false;
         }
         private int openDocuments = 0;
-      
-
+        public int Language = 0;
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            blank frm = (blank)this.ActiveMdiChild;
-            frm.Save(frm.DocName);
-            frm.IsSaved = true;
+              blank frm = (blank)this.ActiveMdiChild;
+              frm.Save(frm.DocName);
+              frm.IsSaved = true;
+           
+
         }
 
         SaveFileDialog saveFileDialog1=new SaveFileDialog();
@@ -34,11 +35,12 @@ namespace TextPad
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 blank frm = (blank)this.ActiveMdiChild;
-                frm.Save(saveFileDialog1.FileName);
-                frm.MdiParent = this;
                 frm.DocName = saveFileDialog1.FileName;
                 frm.Text = frm.DocName;
 
+                frm.Save(saveFileDialog1.FileName);
+                frm.MdiParent = this;
+                
                 frm.IsSaved = true;
             }
         }
@@ -49,7 +51,7 @@ namespace TextPad
             var openFileDialog1 = new OpenFileDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                blank frm = new blank();
+                blank frm = new blank(Language);
                 frm.Open(openFileDialog1.FileName);
                 frm.MdiParent = this;
                 frm.DocName = openFileDialog1.FileName;
@@ -79,7 +81,7 @@ namespace TextPad
 
         private void New_File_Click(object sender, EventArgs e)
         {
-            blank frm = new blank();
+            blank frm = new blank(Language);
             frm.DocName = "Untitled" + ++openDocuments;
             frm.Text = frm.DocName;
             frm.MdiParent = this;
@@ -163,6 +165,90 @@ namespace TextPad
             About frm = new About();
             frm.Show();
 
+        }
+
+        private void languageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Kuda lng = new Kuda();
+
+            if (lng.ShowDialog(this) == DialogResult.Cancel)
+            {
+                
+                if (lng.ret_H() == 1)
+                {
+                    Language = 1;
+                    toolStripMenuItem1.Text = "Файл";
+                    New_File.Text = "Новий файл";
+                    openToolStripMenuItem.Text = "Відкрити";
+                    saveToolStripMenuItem.Text = "Зберегти";
+                    saveAsToolStripMenuItem.Text = "Зберегти як";
+                    closeToolStripMenuItem.Text = "Вихід";
+                    formatToolStripMenuItem1.Text = "Правка";
+                    copyToolStripMenuItem.Text = "Копіювати";
+                    cutToolStripMenuItem.Text = "Вирізати";
+                    pastToolStripMenuItem.Text = "Вставити";
+                    deleteToolStripMenuItem.Text = "Видалити";
+                    editToolStripMenuItem.Text = "Формат";
+                    fontToolStripMenuItem.Text = "Шрифт";
+                    colorToolStripMenuItem.Text = "Колір";
+                    Find_menu.Text = "Знайти";
+                    textToolStripMenuItem.Text = "Текст";
+                    windowToolStripMenuItem.Text = "Вікна";
+                    cascadeToolStripMenuItem.Text = "Каскад";
+                    theHorizontalToolStripMenuItem.Text = "Горизонтально";
+                    theVerticalToolStripMenuItem.Text = "Вертикально";
+                    tabToolStripMenuItem.Text = "Вкладки";
+                    helpToolStripMenuItem.Text = "Допомога";
+                    aboutToolStripMenuItem.Text = "Про програму";
+                    languageToolStripMenuItem.Text = "Мова";
+                    for (int i = 0; i < this.MdiChildren.Length; i++)
+                    {
+                        blank frm = (blank)this.MdiChildren[i];
+                        frm.SetL(Language);
+                    }
+
+                }
+                if (lng.ret_H() == 0)
+                {
+                    Language = 0;
+                    toolStripMenuItem1.Text = "File";
+                    New_File.Text = "New";
+                    openToolStripMenuItem.Text = "Open";
+                    saveToolStripMenuItem.Text = "Save";
+                    saveAsToolStripMenuItem.Text = "Save as";
+                    closeToolStripMenuItem.Text = "Exit";
+                    formatToolStripMenuItem1.Text = "Edit";
+                    copyToolStripMenuItem.Text = "Copy";
+                    cutToolStripMenuItem.Text = "Cut";
+                    pastToolStripMenuItem.Text = "Paste";
+                    deleteToolStripMenuItem.Text = "Delete";
+                    editToolStripMenuItem.Text = "Format";
+                    fontToolStripMenuItem.Text = "Font";
+                    colorToolStripMenuItem.Text = "Color";
+                    Find_menu.Text = "Find";
+                    textToolStripMenuItem.Text = "Text";
+                    windowToolStripMenuItem.Text = "Window";
+                    cascadeToolStripMenuItem.Text = "Cascade";
+                    theHorizontalToolStripMenuItem.Text = "The Horizontal";
+                    theVerticalToolStripMenuItem.Text = "The Vertical";
+                    tabToolStripMenuItem.Text = "Tab";
+                    helpToolStripMenuItem.Text = "Help";
+                    aboutToolStripMenuItem.Text = "About";
+                    languageToolStripMenuItem.Text = "Language";
+                    for (int i = 0; i < this.MdiChildren.Length; i++)
+                    {
+                        blank frm = (blank)this.MdiChildren[i];
+                        frm.SetL(Language);
+                    }
+
+                }
+            }
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            blank form = (blank)this.ActiveMdiChild;
+            form.SelectAll();
         }
     }
 }

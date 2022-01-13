@@ -12,10 +12,14 @@ namespace TextPad
 {
     public partial class blank : Form
     {
-        public blank()
+       
+        public blank(int a)
         {
             InitializeComponent();
+            Language = a;
+            SetL(Language);
             Time.Text = Convert.ToString(System.DateTime.Now.ToLongTimeString());
+
             Time.ToolTipText = Convert.ToString(System.DateTime.Today.ToLongDateString());
 
         }
@@ -64,22 +68,18 @@ namespace TextPad
                 return;
             else
             {
-                FileStream fs = null;
-                fs = new FileStream(SaveFileName, FileMode.Open);
-                StreamWriter sw = new StreamWriter(fs, Encoding.Unicode);
+                StreamWriter sw = new StreamWriter(SaveFileName);
                 sw.WriteLine(richTextBox1.Text);
                 sw.Close();
                 DocName = SaveFileName;
+
+
             }
-           
+
         }
 
 
-
-
-
-
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+            private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Copy();
         }
@@ -115,7 +115,35 @@ namespace TextPad
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
+            SetL(Language);
             Amount_sb.Text = "Аmount of symbols: " + richTextBox1.Text.Length.ToString();
         }
+        public int Language;
+        public void SetL(int a)
+        {
+            if(a==1)
+            {
+                Amount_sb.Text = "Кількість символів ";
+               
+                copyToolStripMenuItem.Text = "Копіювати";
+                cutToolStripMenuItem.Text = "Вирізати";
+                pasteToolStripMenuItem.Text = "Вставити";
+                deleteToolStripMenuItem.Text = "Видалити";
+                selectAllToolStripMenuItem.Text = "Вибрати все";
+                Language = 1;
+            }
+            if (a == 0)
+            {
+                Amount_sb.Text = "Count ";
+                copyToolStripMenuItem.Text = "Copy";
+                cutToolStripMenuItem.Text = "Cut";
+                pasteToolStripMenuItem.Text = "Paste";
+                deleteToolStripMenuItem.Text = "Delete";
+                selectAllToolStripMenuItem.Text = "Select All";
+                Language = 0;
+            }
+        }
+
+      
     }
 }
