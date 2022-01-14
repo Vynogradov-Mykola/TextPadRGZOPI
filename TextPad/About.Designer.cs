@@ -30,7 +30,7 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.Autor = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.Okey_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,15 +59,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = " TextPad ";
             // 
-            // label2
+            // Autor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 34);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Made by Vynogradov Mykola \r\nKNT-110";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Autor.AutoSize = true;
+            this.Autor.Location = new System.Drawing.Point(15, 192);
+            this.Autor.Name = "Autor";
+            this.Autor.Size = new System.Drawing.Size(194, 34);
+            this.Autor.TabIndex = 2;
+            this.Autor.Text = "Made by Vynogradov Mykola \r\nKNT-110";
+            this.Autor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // linkLabel1
             // 
@@ -98,7 +98,7 @@
             this.ClientSize = new System.Drawing.Size(225, 235);
             this.Controls.Add(this.Okey_btn);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Autor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -116,7 +116,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label Autor;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button Okey_btn;
     }

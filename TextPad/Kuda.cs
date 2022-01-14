@@ -12,18 +12,19 @@ namespace TextPad
 {
     public partial class Kuda : Form
     {
-        public Kuda()
+        public Kuda(int Language)
         {
             InitializeComponent();
-           
+            if (Language == 1) groupBox1.Text = "Виберіть"; //Translate
+            if (Language == 0) groupBox1.Text = "Select";   //Translate
         }
         public Pen pen;
         private void OK_btn_Click(object sender, EventArgs e)
         {
 
-            this.Close();
+            this.Close();   //Close window
         }
-        public int ret_H()
+        public int ret_Language()   //Return Language index 0-English; 1-Ukrainian
         {
 
             if (Eng_btn.Checked == true) return 0;

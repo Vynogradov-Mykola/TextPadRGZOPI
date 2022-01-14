@@ -17,7 +17,7 @@ namespace TextPad
         {
             InitializeComponent();
             Language = a;
-            SetL(Language);
+            SetL(Language); //Translate
             Time.Text = Convert.ToString(System.DateTime.Now.ToLongTimeString());
 
             Time.ToolTipText = Convert.ToString(System.DateTime.Today.ToLongDateString());
@@ -26,29 +26,29 @@ namespace TextPad
         public string DocName = "";
         private string BufferText = "";
         public bool IsSaved = false;
-        public void Cut()
+        public void Cut()   //Cut selected text
         {
             this.BufferText = richTextBox1.SelectedText;
             richTextBox1.SelectedText = "";
         }
-        public void Copy()
+        public void Copy()  //Copy selected text
         {
             this.BufferText = richTextBox1.SelectedText;
         }
-        public void Paste()
+        public void Paste() //Paste text
         {
             richTextBox1.SelectedText = this.BufferText;
         }
-        public void SelectAll()
+        public void SelectAll() //Select all text
         {
             richTextBox1.SelectAll();
         }
-        public void Delete()
+        public void Delete()    //Delete selected text
         {
             richTextBox1.SelectedText = "";
             this.BufferText = "";
         }
-        public void Open(string OpenFileName)
+        public void Open(string OpenFileName)   //Open file
         {
             if (OpenFileName == "")
             {
@@ -62,7 +62,7 @@ namespace TextPad
                 DocName = OpenFileName;
             }
         }
-        public void Save(string SaveFileName)
+        public void Save(string SaveFileName)   //save file
         {
             if (SaveFileName == "")
                 return;
@@ -79,32 +79,32 @@ namespace TextPad
         }
 
 
-            private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)    //Copy text
         {
             Copy();
         }
 
-        private void cutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cutToolStripMenuItem_Click(object sender, EventArgs e) //Cut text
         {
             Cut();
         }
 
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pasteToolStripMenuItem_Click(object sender, EventArgs e)   //Paste copy/cut text
         {
             Paste();
         }
 
-        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)  //Delete selected text
         {
             Delete();
         }
 
-        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)   //Select all text
         {
             SelectAll();
         }
 
-        private void blank_FormClosing(object sender, FormClosingEventArgs e)
+        private void blank_FormClosing(object sender, FormClosingEventArgs e)   //save files when closing (if current not)
         {
             if (IsSaved == false)
                 if (MessageBox.Show("Do you want save changes in " + this.DocName + "?", "Message", MessageBoxButtons.YesNo,
@@ -113,12 +113,15 @@ namespace TextPad
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void richTextBox1_TextChanged(object sender, EventArgs e)   //Check amount of symvols and current time
         {
             SetL(Language);
             Amount_sb.Text = "Аmount of symbols: " + richTextBox1.Text.Length.ToString();
+            Time.Text = Convert.ToString(System.DateTime.Now.ToLongTimeString());
+
+            Time.ToolTipText = Convert.ToString(System.DateTime.Today.ToLongDateString());
         }
-        public int Language;
+        public int Language;    //For Translate
         public void SetL(int a)
         {
             if(a==1)

@@ -31,8 +31,8 @@
             this.OK_btn = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Eng_btn = new System.Windows.Forms.RadioButton();
             this.Uk_btn = new System.Windows.Forms.RadioButton();
+            this.Eng_btn = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,18 +55,7 @@
             this.groupBox1.Size = new System.Drawing.Size(155, 100);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // Eng_btn
-            // 
-            this.Eng_btn.AutoSize = true;
-            this.Eng_btn.Location = new System.Drawing.Point(7, 22);
-            this.Eng_btn.Name = "Eng_btn";
-            this.Eng_btn.Size = new System.Drawing.Size(75, 21);
-            this.Eng_btn.TabIndex = 0;
-            this.Eng_btn.TabStop = true;
-            this.Eng_btn.Text = "English";
-            this.Eng_btn.UseVisualStyleBackColor = true;
+            this.groupBox1.Text = "Select";
             // 
             // Uk_btn
             // 
@@ -79,6 +68,17 @@
             this.Uk_btn.TabStop = true;
             this.Uk_btn.Text = "Українська";
             this.Uk_btn.UseVisualStyleBackColor = true;
+            // 
+            // Eng_btn
+            // 
+            this.Eng_btn.AutoSize = true;
+            this.Eng_btn.Location = new System.Drawing.Point(7, 22);
+            this.Eng_btn.Name = "Eng_btn";
+            this.Eng_btn.Size = new System.Drawing.Size(75, 21);
+            this.Eng_btn.TabIndex = 0;
+            this.Eng_btn.TabStop = true;
+            this.Eng_btn.Text = "English";
+            this.Eng_btn.UseVisualStyleBackColor = true;
             // 
             // Kuda
             // 

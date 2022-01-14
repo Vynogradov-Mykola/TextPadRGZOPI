@@ -12,11 +12,23 @@ namespace TextPad
 {
     public partial class TextFind : Form
     {
-        public TextFind()
+        public TextFind(int Language)
         {
             InitializeComponent();
+            if (Language == 0)  //Translate
+            {
+                this.Text = "Find";
+                Check_Match.Text = "Match case";
+                Check_whole.Text = "Check whole" +Environment.NewLine+ "word";
+            }
+            if(Language ==1)    //Translate
+            {
+                this.Text = "Знайти";
+                Check_Match.Text = "Враховувати регістр";
+                Check_whole.Text = "Перевірити ціле" + Environment.NewLine + " слово";
+            }
         }
-        public RichTextBoxFinds FindCondition
+        public RichTextBoxFinds FindCondition   
         {
             get
             {
@@ -31,18 +43,21 @@ namespace TextPad
         }
         public string FindText
         {
-            set {
-                Text_To_Find.Text = value; }
+            set
+            {
+                Text_To_Find.Text = value;
+            }
             get
             {
                 return Text_To_Find.Text;
             }
-           
-            }
-            
-        private void Cancel_buttn_Click(object sender, EventArgs e)
-        {
-
         }
+            
+        private void Cancel_buttn_Click(object sender, EventArgs e)     //Close 
+        {
+            this.Close();
+        }
+
+       
     }
 }

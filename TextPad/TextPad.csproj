@@ -58,11 +58,11 @@
     <Compile Include="blank.Designer.cs">
       <DependentUpon>blank.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Textpad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Textpad.Designer.cs">
+      <DependentUpon>Textpad.cs</DependentUpon>
     </Compile>
     <Compile Include="Kuda.cs">
       <SubType>Form</SubType>
@@ -84,8 +84,8 @@
     <EmbeddedResource Include="blank.resx">
       <DependentUpon>blank.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Textpad.resx">
+      <DependentUpon>Textpad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kuda.resx">
       <DependentUpon>Kuda.cs</DependentUpon>

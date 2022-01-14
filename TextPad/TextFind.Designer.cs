@@ -39,7 +39,7 @@
             // 
             this.Text_To_Find.Location = new System.Drawing.Point(12, 4);
             this.Text_To_Find.Name = "Text_To_Find";
-            this.Text_To_Find.Size = new System.Drawing.Size(254, 22);
+            this.Text_To_Find.Size = new System.Drawing.Size(327, 22);
             this.Text_To_Find.TabIndex = 0;
             // 
             // Check_Match
@@ -55,7 +55,7 @@
             // Check_whole
             // 
             this.Check_whole.AutoSize = true;
-            this.Check_whole.Location = new System.Drawing.Point(154, 30);
+            this.Check_whole.Location = new System.Drawing.Point(204, 30);
             this.Check_whole.Name = "Check_whole";
             this.Check_whole.Size = new System.Drawing.Size(109, 38);
             this.Check_whole.TabIndex = 3;
@@ -66,18 +66,19 @@
             // 
             this.OK_buttn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.OK_buttn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.OK_buttn.Location = new System.Drawing.Point(272, 4);
+            this.OK_buttn.Location = new System.Drawing.Point(345, 4);
             this.OK_buttn.Name = "OK_buttn";
             this.OK_buttn.Size = new System.Drawing.Size(65, 22);
             this.OK_buttn.TabIndex = 1;
             this.OK_buttn.Text = "Ok";
             this.OK_buttn.UseVisualStyleBackColor = true;
+       
             // 
             // Cancel_buttn
             // 
             this.Cancel_buttn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Cancel_buttn.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.Cancel_buttn.Location = new System.Drawing.Point(272, 36);
+            this.Cancel_buttn.Location = new System.Drawing.Point(345, 36);
             this.Cancel_buttn.Name = "Cancel_buttn";
             this.Cancel_buttn.Size = new System.Drawing.Size(65, 22);
             this.Cancel_buttn.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 68);
+            this.ClientSize = new System.Drawing.Size(423, 68);
             this.Controls.Add(this.Cancel_buttn);
             this.Controls.Add(this.OK_buttn);
             this.Controls.Add(this.Check_whole);
